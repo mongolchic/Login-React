@@ -4,20 +4,11 @@ var config = require('./webpack.config');
 var express = require('express');
 var stormpath = require('express-stormpath');
 var bodyParser = require('body-parser');
-var webpackDevMiddleware = require("webpack-dev-middleware");
+
 
 var app = express();
 
 var compiler = webpack(config);
-
-var compiler = webpack({
-    // configuration
-    output: { path: '/' }
-});
-
-app.use(webpackDevMiddleware(compiler, {
-    // options
-}));
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
