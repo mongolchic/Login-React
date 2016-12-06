@@ -4,11 +4,16 @@ var config = require('./webpack.config');
 var express = require('express');
 var stormpath = require('express-stormpath');
 var bodyParser = require('body-parser');
+var port = process.env.PORT || 3003;
+var logger = require("morgan");
+
 
 
 var app = express();
 
 var compiler = webpack(config);
+
+app.listen(port);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
