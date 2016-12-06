@@ -5,7 +5,7 @@ var express = require('express');
 var stormpath = require('express-stormpath');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3003;
-var logger = require("morgan");
+
 
 
 
